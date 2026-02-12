@@ -7,6 +7,13 @@
 \usepackage[spanish]{babel}
 
 
+%tiks
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\usetikzlibrary[patterns]
+
 
 
 \usetheme{Berlin}
@@ -35,6 +42,19 @@
 
 
 \begin{document}
+
+
+%colores de tiks
+\definecolor{ffqqqq}{rgb}{1,0,0}
+\definecolor{wewdxt}{rgb}{0.43137254901960786,0.42745098039215684,0.45098039215686275}
+\definecolor{qqwxvy}{rgb}{0,0.403921568627451,0.34509803921568627}
+\definecolor{rvwvcq}{rgb}{0.08235294117647059,0.396078431372549,0.7529411764705882}
+\definecolor{ttqqqq}{rgb}{0.2,0,0}
+
+
+
+
+
 \begin{frame}
     \titlepage
     \begin{figure}[htpb]
@@ -69,10 +89,42 @@ Dentro del estudio de la óptica, existe más de un enfoque que se da para la lu
 \begin{frame}{Antecedentes teóricos}
     En la figura \ref{fig:Esquema} se muestran los puntos $A, B$ y $C$ que representan el punto de incidencia, el punto de reflexión y el punto de observación respectivamente. Además, se muestra la dirección del haz del láser, la normal a la superficie y los ángulos de incidencia y reflexión.   
 
+    \hspace{-0.5cm}
     \begin{figure}
-        \centering
-        \includegraphics[width=0.5\linewidth]{images/AntT.png}
-        \caption{Dibujo de la ley del sistema}
+        \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.3cm,y=0.3cm]
+            \clip(-1.8275642292156828,-7.669219950345871) rectangle (11.533011441371558,0.9309931289492379);
+            \fill[line width=1.9pt,color=ttqqqq,fill=ttqqqq,pattern=north west lines,pattern color=ttqqqq] (-1,0.25) -- (-1,-0.25) -- (1,-0.25) -- (1,0.25) -- cycle;
+            \fill[line width=1pt,color=rvwvcq,fill=rvwvcq,fill opacity=0.10000000149011612] (9.760287230697898,0.4387912809451863) -- (9.848045486886935,0.4867338348056066) -- (10.327471025491139,-0.39084872708476603) -- (10.239712769302102,-0.4387912809451863) -- cycle;
+            \draw [line width=1.9pt,color=ttqqqq] (-1,0.25)-- (-1,-0.25);
+            \draw [line width=1.9pt,color=ttqqqq] (-1,-0.25)-- (1,-0.25);
+            \draw [line width=1.9pt,color=ttqqqq] (1,-0.25)-- (1,0.25);
+            \draw [line width=1.9pt,color=ttqqqq] (1,0.25)-- (-1,0.25);
+            \draw [line width=1pt,color=rvwvcq] (9.760287230697898,0.4387912809451863)-- (9.848045486886935,0.4867338348056066);
+            \draw [line width=1pt,color=rvwvcq] (9.848045486886935,0.4867338348056066)-- (10.327471025491139,-0.39084872708476603);
+            \draw [line width=1pt,color=rvwvcq] (10.327471025491139,-0.39084872708476603)-- (10.239712769302102,-0.4387912809451863);
+            \draw [line width=1pt,color=rvwvcq] (10.239712769302102,-0.4387912809451863)-- (9.760287230697898,0.4387912809451863);
+            \draw [line width=1pt,color=qqwxvy,domain=-1.8275642292156828:11.533011441371558] plot(\x,{(-7.1-0*\x)/1});
+            \draw [line width=1pt,color=ffqqqq] (1,0)-- (10,0);
+            \draw [line width=1pt,color=ffqqqq] (10,0)-- (5.441142426866253,-7.1);
+            \draw [line width=1pt,dotted] (8.244834876219254,-0.958851077208406)-- (10,0);
+            \draw [shift={(10,0)},line width=1pt]  plot[domain=3.141592653589793:3.641592653589793,variable=\t]({1*1.0576643510571433*cos(\t r)+0*1.0576643510571433*sin(\t r)},{0*1.0576643510571433*cos(\t r)+1*1.0576643510571433*sin(\t r)});
+            \draw [shift={(10,0)},line width=1pt]  plot[domain=3.141592653589793:4.141592653589793,variable=\t]({1*1.71715532405198*cos(\t r)+0*1.71715532405198*sin(\t r)},{0*1.71715532405198*cos(\t r)+1*1.71715532405198*sin(\t r)});
+            \draw [shift={(5.441142426866253,-7.1)},line width=1pt]  plot[domain=0:1,variable=\t]({1*0.8239203788374079*cos(\t r)+0*0.8239203788374079*sin(\t r)},{0*0.8239203788374079*cos(\t r)+1*0.8239203788374079*sin(\t r)});
+            \begin{scriptsize}
+            \draw[color=ttqqqq] (0.013459977361299391,-1.0) node {Láser};
+            \draw[color=rvwvcq] (10.0,-2.0) node {Espejo};
+            \draw[color=qqwxvy] (0.5,-6.582663552893396) node {Pantalla};
+            \draw[color=black] (1.5,0.5) node {$A$};
+            \draw [fill=rvwvcq] (10,0) circle (2.5pt);
+            \draw[color=black] (11,0.19020005535042375) node {$B$};
+            \draw [fill=wewdxt] (5.441142426866253,-7.1) circle (2.5pt);
+            \draw[color=black] (4.8,-6.5) node {$C$};
+            \draw[color=black] (8.5,0.5) node {$\Delta\theta$};
+            \draw[color=black] (7.81530904118649,-0.9) node {$\theta_{i}$};
+            \draw[color=black] (7,-6.525154907687348) node {$\theta_i$};
+            \end{scriptsize}
+        \end{tikzpicture}
+        \caption{Geometría del láser}
         \label{fig:Esquema}
     \end{figure}
 \end{frame}
