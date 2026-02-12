@@ -1,0 +1,246 @@
+\documentclass{beamer}
+\usepackage[T1]{fontenc}
+\usepackage{subcaption}
+
+% other packages
+\usepackage{amsmath}
+\usepackage[spanish]{babel}
+
+
+
+
+\usetheme{Berlin}
+
+
+
+\AtBeginSection[]{
+  \begin{frame}
+  \vfill
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+    \usebeamerfont{title}\insertsectionhead\par%
+  \end{beamercolorbox}
+  \vfill
+  \end{frame}
+}
+
+\setbeamertemplate{caption}[numbered]
+
+
+\title{Ley de reflexión}
+\author[Equipo 4]{Guzmán Trujillo Alejandro, Martínez Castillo Emily, García Tapia David, Bárcena Ramos Rodrigo}
+\subtitle{Laboratorio de óptica}
+\institute{Dra. Montes Pérez Areli \\ Benemérita Universidad Autónoma de Puebla}
+\date{\today}
+
+
+\begin{document}
+\begin{frame}
+    \titlepage
+    \begin{figure}[htpb]
+       \begin{center}
+            \includegraphics[width=0.2\linewidth]{pic/xmu_logo.png}
+        \end{center}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Table of Contents}
+\tableofcontents
+\end{frame}
+
+
+
+\section{Introducción}
+\begin{frame}{Introducción}
+
+Dentro del estudio de la óptica, existe más de un enfoque que se da para la luz. El primer planteamiento estudiado y observado en el laboratorio es la óptica geométrica; en el cual se trata a la luz como un objeto que se propaga en líneas rectas, ignorando fenómenos como la difracción.\\La óptica geométrica puede expresarse como un conjunto de tres leyes, siendo la ley de reflexión el primer fenómeno de estudio para este reporte.\\
+
+\end{frame}
+
+\begin{frame}{Antecedentes teóricos}
+    La ley de flexión nos dice que la luz que incide sobre una superficie plana a un ángulo $\theta_i$ con respecto a la normal a la superficie es reflejada en un ángulo $\theta_r$, el cual es igual al ángulo incidente. Véase la ecuación 1 y figura 1 para un mejor entendimiento del fenómeno.
+\begin{align}
+\theta_i=\theta_r
+\end{align}
+\end{frame}
+
+
+\begin{frame}{Antecedentes teóricos}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.5\linewidth]{images/AntT.png}
+        \caption{Enter Caption}
+        \label{fig:placefdsg}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Objetivo y referencia}
+
+\begin{itemize}
+    \item {\textbf{Objetivo:}} Observar y comprobar la ley de reflexión.
+    \item[]
+    \item {\textbf{Referencia:}} Todo el procedimiento se sigue del manual de óptica "\textit{Projects in optics, applications workbook}".
+\end{itemize}
+\end{frame}
+
+\section{Procedimiento}
+
+\begin{frame}{Materiales}
+Los materiales utilizados son los siguientes: \\
+
+\begin{figure}[!htb]
+    \begin{minipage}{0.45\linewidth}
+        \centering
+        \begin{itemize}
+        \item Juego de llaves
+        \item Kit de tornillos
+        \item Riel 
+        \item Cinta para pegar 
+        \item 1 carrito
+        \item 1 vástago
+    \end{itemize}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.45\linewidth}
+        \begin{itemize}
+            \item 1 porta vástago
+            \item 1 base rotatoria
+            \item 1 espejo de primera superficie montado
+            \item 1 cartulina
+            \item 1 placa metálica
+        \end{itemize}
+    \end{minipage}
+\end{figure}
+\end{frame}
+
+
+\begin{frame}{Procedimiento}
+El procedimiento a seguir es el siguiente:\\
+    \vspace{0.5cm}
+    \begin{enumerate} 
+    \item Comenzamos alineando el láser al eje óptico.
+    \item Pegar la cartulina a la placa metálica.
+    \item Montar la base rotatoria junto con el espejo y atornillarla a la mesa estando sobre el eje óptico de tal forma que el cero de la base se encuentre antiparalelo a la dirección del haz del láser.
+    \item Encender el láser y ajustar el espejo de manera que, al rebotar, se refleje sobre el orificio de salida del haz.
+    \item Atornillar la placa metálica a la mesa.
+
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Procedimiento}
+
+    \begin{enumerate} 
+    \setcounter{enumi}{5}
+    \item Rotar la base hasta que el haz reflejado sobre el muro forme un ángulo de 90 grados (45 grados sobre la base rotatoria en este caso) y marcar ese punto sobre la cartulina $p_0$.
+    \item Hacer una línea discontinua de puntos con separación de aproximadamente una pulgada uno del otro sobre la trayectoria que sigue el láser en la cartulina.
+    \item Realizar las mediciones reflejando el haz sobre los puntos dibujados y anotar el ángulo que muestra la base rotatoria.
+    
+\end{enumerate}
+\end{frame}
+\begin{frame}{Esquema del procedimiento}
+    En la figura \ref{fig:sche} se muestra un vista esquemática del procedimiento\\
+    \vspace{0.5cm}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.7\linewidth]{images/Esquema.png}
+        \caption{Esquema del procedimiento}
+        \label{fig:sche}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Imágenes de procedimiento}
+    \begin{figure}
+        \centering
+        \begin{minipage}{.4\textwidth}
+            \centering
+            \includegraphics[width=1\linewidth, height=0.66\textheight]{fotos/baseR.jpeg}
+        \end{minipage}
+        \hfill
+        \begin{minipage}{.4\textwidth}
+            \centering
+            \includegraphics[width=1\linewidth, height=0.66\textheight]{fotos/espejo.jpeg}
+        \end{minipage}
+        \label{fig:esp}
+        \caption{Fotos del montaje del espejo}
+    \end{figure}
+\end{frame}
+\begin{frame}{Imágenes de procedimiento}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.66\linewidth]{fotos/pantalla.jpeg}
+        \caption{Láser incidiendo sobre la pantalla}
+        \label{fig:pant}
+    \end{figure}
+        
+\end{frame}
+
+\section{Resultados y análisis de resultados}
+
+\begin{frame}{Resultados}
+Los resultados son mostrados en las siguientes tablas
+\begin{figure}
+    \centering
+    \includegraphics[width=0.1\linewidth]{images/Resultados.png}
+    \caption{Resultados mostrados en una tabla}
+    \label{fig:tabR}
+\end{figure}
+\end{frame}
+\begin{frame}{Resultados}
+Los mismos datos son graficados en la figura \ref{fig:GraficaResultados}.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.65\linewidth]{images/DivVSDis.png}
+    \caption{Resultados visualizados en una gráfica}
+    \label{fig:GraficaResultados}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Analisis de los resultados}
+\begin{minipage}{.45\textwidth}
+    Observando la estimación lineal y las tablas de los resultados, notamos que la ley de reflexión se cumple con una pequeña variación. 
+\end{minipage}
+\hfill
+\begin{minipage} {0.45\textwidth}
+    \centering
+    \begin{figure}
+        \centering
+        \includegraphics[width=1.2\textwidth]{images/DivVSDis.png}
+        \caption*{Figura 6: Resultados visualizados en una gráfica}
+    \end{figure}
+\end{minipage}
+\end{frame}
+
+\begin{frame}{Fuentes de error}
+    Con ayuda de las tablas, podemos observar que los diámetros entre dos mediciones consecutivas pueden no varían de forma significativa e incluso que puede llegar a ser más grande una medición anterior. Esto es debido a que en la realización de la práctica se tuvieron muchos factores que dificultaron el proceso, tales como: 
+    \begin{enumerate}
+        \item Punta del lápiz de color
+        \item Pulso al momento de dibujar el cuadrado y la precisión
+        \item Firmeza de la placa metálica
+        \item Herramientas de medición del diámetro (reglas variadas)
+    \end{enumerate}
+\end{frame}
+
+
+\section{Conclusiones}
+\begin{frame}{Conclusiones}
+    A pesar de las dificultades ya mencionadas, es evidente que el diámetro aumentaba a medida que la distancia entre el láser y la cartulina crecía, por lo tanto, confirmamos que tiende a divergir. Además, la divergencia del láser se comporta de manera distinta en diferentes regiones de $z$.  
+\end{frame}
+
+\begin{frame}{Una aplicación}
+    \begin{itemize}
+        \item{\textbf{Lentes divergentes:}}
+        \begin{itemize}
+            \item[]Usados en gafas, lupas, telescopios. En estos casos, los lentes divergentes recogen la luz y ayudan a enfocar para poder observar con mayor claridad.
+        \end{itemize}
+    \end{itemize}
+        
+    \begin{figure} [h]
+        \centering
+        \includegraphics[width=0.4\linewidth]{images/Divergente.png}
+        \caption{Gráfica de lentes convergentes}
+        \label{fig:placeholder}
+    \end{figure}
+\end{frame}
+
+\end{document} 
