@@ -1,6 +1,9 @@
 \documentclass{beamer}
 \usepackage[T1]{fontenc}
 \usepackage{subcaption}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
 
 % other packages
 \usepackage{amsmath}
@@ -232,68 +235,114 @@ El procedimiento a seguir es el siguiente:\\
 \section{Resultados y análisis de resultados}
 
 \begin{frame}{Resultados}
-Los resultados son mostrados en las siguientes tablas
+Los resultados son mostrados en las siguientes tablas\\
 \begin{figure}
     \centering
-    \includegraphics[width=0.55\linewidth]{images/Resultados.png}
-    \caption{Resultados mostrados en una tabla}
-    \label{fig:tabR}
+    \begin{minipage}
+        {0.45\textwidth}
+        \centering
+        \includegraphics[width=1.2\textwidth]{images/Resultados1.png}
+    \end{minipage}
+    \hfill
+    \begin{minipage}
+        {0.45\textwidth}
+        \centering
+        \includegraphics[width=1\textwidth]{images/Resultados2.png}
+    \end{minipage}
+    \caption{Resultados visualizados en una gráfica}
+    \label{fig:TablaResultados}
 \end{figure}
+
 \end{frame}
 \begin{frame}{Resultados}
 Los mismos datos son graficados en la figura \ref{fig:GraficaResultados}.
+
 \begin{figure}
-    \centering
-    \includegraphics[width=0.65\linewidth]{images/DivVSDis.png}
-    \caption{Resultados visualizados en una gráfica}
+    \begin{tikzpicture}
+    \begin{axis}[font=\small, xlabel=\'Angulo de incidencia (rad), ylabel=\'Angulo de reflexión (rad),width=0.7\textwidth, height=0.5\textwidth, legend pos=north west]
+        \addplot+[
+            only marks,
+            scatter,
+            color=blue,
+            mark=*,
+            mark size=2.5pt
+        ] table[meta=refle]{images/res.txt};
+    \end{axis}
+    \end{tikzpicture}
+    \caption{Gráfica de los resultados}
     \label{fig:GraficaResultados}
 \end{figure}
+
 \end{frame}
 
 \begin{frame}{Analisis de los resultados}
 \begin{minipage}{.45\textwidth}
-    Observando la estimación lineal y las tablas de los resultados, notamos que la ley de reflexión se cumple con una pequeña variación. 
+    En la gráfica se observa que los puntos se encuentran sobre la línea $y=x$, lo cual es consistente con la ley de reflexión, ya que el ángulo de incidencia es igual al ángulo de reflexión. Podemos concluír que los resultados obtenidos son consistentes con la ley de reflexión.
 \end{minipage}
 \hfill
 \begin{minipage} {0.45\textwidth}
     \centering
     \begin{figure}
-        \centering
-        \includegraphics[width=1.2\textwidth]{images/DivVSDis.png}
-        \caption*{Figura 6: Resultados visualizados en una gráfica}
+        \begin{tikzpicture}
+        \begin{axis}[font=\footnotesize, xlabel=\'Angulo de incidencia (rad), ylabel=\'Angulo de reflexión (rad),width=1\textwidth,  legend pos=north west]
+            \addplot+[
+                only marks,
+                scatter,
+                color=blue,
+                mark=*,
+                mark size=1.5pt
+            ] table[meta=refle]{images/res.txt};
+        \end{axis}
+        \end{tikzpicture}
+        \caption*{Figura 6: Gráfica de los resultados}
     \end{figure}
 \end{minipage}
 \end{frame}
 
 \begin{frame}{Fuentes de error}
-    Con ayuda de las tablas, podemos observar que los diámetros entre dos mediciones consecutivas pueden no varían de forma significativa e incluso que puede llegar a ser más grande una medición anterior. Esto es debido a que en la realización de la práctica se tuvieron muchos factores que dificultaron el proceso, tales como: 
+    Con ayuda de las tablas y de la gráfica se puede notar que el error no excede el 1 grado, lo cual es un error bastante pequeño. Sin embargo, existen algunas fuentes de error que podrían haber afectado los resultados, entre ellas se encuentran: \\
     \begin{enumerate}
-        \item Punta del lápiz de color
-        \item Pulso al momento de dibujar el cuadrado y la precisión
-        \item Firmeza de la placa metálica
-        \item Herramientas de medición del diámetro (reglas variadas)
+        \item Resolución de la base rotatoria
+        \item Resolución del ojo humano para medir los ángulos
+        \item Resolución de la regla para medir las distancias.
     \end{enumerate}
 \end{frame}
 
 
 \section{Conclusiones}
 \begin{frame}{Conclusiones}
-    A pesar de las dificultades ya mencionadas, es evidente que el diámetro aumentaba a medida que la distancia entre el láser y la cartulina crecía, por lo tanto, confirmamos que tiende a divergir. Además, la divergencia del láser se comporta de manera distinta en diferentes regiones de $z$.  
+    Concluímos que la ley de reflexión se cumple, ya que los resultados obtenidos son consistentes con la misma. Además, el error obtenido es bastante pequeño, lo cual nos da confianza en los resultados obtenidos.
 \end{frame}
 
-\begin{frame}{Una aplicación}
+\begin{frame}{Aplicaciones}
     \begin{itemize}
-        \item{\textbf{Lentes divergentes:}}
+        \item{\textbf{Espejos de automoviles:}}
         \begin{itemize}
-            \item[]Usados en gafas, lupas, telescopios. En estos casos, los lentes divergentes recogen la luz y ayudan a enfocar para poder observar con mayor claridad.
+            \item[]Se usan en los retrovizores de los carros para adquirir una mejor visión de lo que sucede a los costados o detrás del vehículo. 
         \end{itemize}
     \end{itemize}
         
     \begin{figure} [h]
         \centering
-        \includegraphics[width=0.4\linewidth]{images/Divergente.png}
-        \caption{Gráfica de lentes convergentes}
-        \label{fig:placeholder}
+        \includegraphics[width=0.4\linewidth]{images/retrovizor.jpg}
+        \caption{Retrovisor de un automóvil}
+        \label{fig:retrovizor}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Aplicaciones}
+    \begin{itemize}
+        \item {\textbf{Espejos de telescopios:}}
+        \begin{itemize}
+            \item[] Se usan en los telescopios para reflejar la luz de los objetos celestes y dirigirla hacia el ocular del telescopio, lo cual permite observar objetos que se encuentran a grandes distancias.
+        \end{itemize}
+    \end{itemize}
+
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.4\linewidth]{images/JamesWebb.jpg}
+        \caption{Imagen del telescopio James Webb.}
+        \label{fig:JamesWebb}
     \end{figure}
 \end{frame}
 
