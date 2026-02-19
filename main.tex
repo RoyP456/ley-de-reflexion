@@ -53,6 +53,8 @@
 \definecolor{qqwxvy}{rgb}{0,0.403921568627451,0.34509803921568627}
 \definecolor{rvwvcq}{rgb}{0.08235294117647059,0.396078431372549,0.7529411764705882}
 \definecolor{ttqqqq}{rgb}{0.2,0,0}
+\definecolor{qqttcc}{rgb}{0,0.2,0.8}
+\definecolor{ffqqqq}{rgb}{1,0,0}
 
 
 
@@ -82,15 +84,28 @@ Dentro del estudio de la óptica, existe más de un enfoque que se da para la lu
 \end{frame}
 
 \begin{frame}{Antecedentes teóricos}
-    La ley de flexión nos dice que la luz que incide sobre una superficie plana a un ángulo $\theta_i$ con respecto a la normal a la superficie es reflejada en un ángulo $\theta_r$, el cual es igual al ángulo incidente. Véase la ecuación 1 y figura 1 para un mejor entendimiento del fenómeno.
-\begin{align}
-\theta_i=\theta_r
-\end{align}
+    La ley de flexión nos dice que la luz que incide sobre una superficie plana a un ángulo $\theta_i$ con respecto a la normal a la superficie es reflejada en un ángulo $\theta_r$, el cual es igual al ángulo incidente. Es decir, se cumple que $\theta_i=\theta_r$. Ver figura \ref{fig:Reflexion}.
+\begin{figure}
+    \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=2.5cm,y=2.5cm]
+        \clip(-0.6906385933154208,-0.26810554937897035) rectangle (0.6906385933154208,0.8880658841405272);
+        \draw[line width=1pt,color=ffqqqq,smooth,samples=100,domain=-0.6906385933154208:0.6906385933154208] plot(\x,{2*abs((\x))});
+        \draw [line width=0.5pt,dash pattern=on 1pt off 1pt] (0,-0.26810554937897035) -- (0,0.8880658841405272);
+        \draw [line width=1pt,color=qqttcc,domain=-0.6906385933154208:0.6906385933154208] plot(\x,{(-0-0*\x)/1});
+        \draw [shift={(0,0)},line width=1pt]  plot[domain=1.1071487177940904:2.0344439357957027,variable=\t]({1*0.4954902747280365*cos(\t r)+0*0.4954902747280365*sin(\t r)},{0*0.4954902747280365*cos(\t r)+1*0.4954902747280365*sin(\t r)});
+        \begin{scriptsize}
+        \draw[color=black] (0.1,0.35) node {$\theta_r$};
+        \draw[color=black] (-0.1,0.35) node {$\theta_i$};
+        \end{scriptsize}
+    \end{tikzpicture}
+
+    \caption{Esquema de la ley de reflexión}
+    \label{fig:Reflexion}
+\end{figure}
 \end{frame}
 
 
 \begin{frame}{Antecedentes teóricos}
-    En la figura \ref{fig:Esquema} se muestran los puntos $A, B$ y $C$ que representan el punto de incidencia, el punto de reflexión y el punto de observación respectivamente. Además, se muestra la dirección del haz del láser, la normal a la superficie y los ángulos de incidencia y reflexión.   
+    En la figura \ref{fig:Esquema} se muestran los puntos $A, B$ y $C$ que representan el punto de incidencia, el punto de reflexión y el punto de observación respectivamente. Además, se muestra la dirección del haz del láser, la normal a la superficie y los ángulos de incidencia y reflexión. Tomamos $\Delta\theta=\theta_r-\theta_0$  
 
     \hspace{-0.5cm}
     \begin{figure}
@@ -115,7 +130,7 @@ Dentro del estudio de la óptica, existe más de un enfoque que se da para la lu
             \draw [shift={(5.441142426866253,-7.1)},line width=1pt]  plot[domain=0:1,variable=\t]({1*0.8239203788374079*cos(\t r)+0*0.8239203788374079*sin(\t r)},{0*0.8239203788374079*cos(\t r)+1*0.8239203788374079*sin(\t r)});
             \begin{scriptsize}
             \draw[color=ttqqqq] (0.013459977361299391,-1.0) node {Láser};
-            \draw[color=rvwvcq] (10.0,-2.0) node {Espejo};
+            \draw[color=rvwvcq] (10.0,-2.7) node {Espejo};
             \draw[color=qqwxvy] (0.5,-6.582663552893396) node {Pantalla};
             \draw[color=black] (1.5,0.5) node {$A$};
             \draw [fill=rvwvcq] (10,0) circle (2.5pt);
@@ -123,8 +138,8 @@ Dentro del estudio de la óptica, existe más de un enfoque que se da para la lu
             \draw [fill=wewdxt] (5.441142426866253,-7.1) circle (2.5pt);
             \draw[color=black] (4.8,-6.5) node {$C$};
             \draw[color=black] (8.5,0.5) node {$\Delta\theta$};
-            \draw[color=black] (7.81530904118649,-0.9) node {$\theta_{i}$};
-            \draw[color=black] (7,-6.525154907687348) node {$\theta_i$};
+            \draw[color=black] (7.81530904118649,-1) node {$\theta_{r}$};
+            \draw[color=black] (7,-6.525154907687348) node {$\theta_r$};
             \end{scriptsize}
         \end{tikzpicture}
         \caption{Geometría del láser}
